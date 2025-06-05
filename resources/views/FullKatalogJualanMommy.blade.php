@@ -152,7 +152,7 @@
                 class="bg-white rounded-xl shadow-md flex flex-col overflow-hidden cursor-pointer transform transition-all duration-300 hover:shadow-xl hover:scale-105 text-center w-full max-w-[170px] mx-auto"
                 x-transition
             >
-                <img src="{{ asset('storage/' . $product->foto) }}" alt="{{ $product->nama_produk }}" class="w-full h-[150px] object-cover">
+                <img src="{{ asset('storage/app/public/' . $product->foto) }}" alt="{{ $product->nama_produk }}" class="w-full h-[150px] object-cover">
                 <h2 class="p-2 text-xs font-semibold text-[#7ed4dd] leading-snug mt-1 mb-1">{{ $product->nama_produk }}</h2>
                 <span class="block text-xs font-bold text-[#ff7eb9] mt-0 mb-2">Rp {{ number_format($product->harga, 0, ',', '.') }}</span>
                 <a href="{{ $product->link }}" 

@@ -171,7 +171,7 @@
                             <td class="px-4 py-2">{{ number_format($produk->harga, 0, ',', '.') }}</td>
                             <td class="px-4 py-2">{{ $produk->kategori ?? '-' }}</td>
                             <td class="px-4 py-2">
-                                <img src="{{ asset('storage/' . $produk->foto) }}" alt="Foto Produk" class="h-20 w-20 object-cover rounded">
+                                <img src="{{ asset('storage/app/public/' . $produk->foto) }}" alt="Foto Produk" class="h-20 w-20 object-cover rounded">
                             </td>
                             <td class="px-4 py-2">
                                 <a href="{{ $produk->link }}" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-700">View</a>

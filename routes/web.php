@@ -23,11 +23,9 @@ Route::get('/login', function () {
 
 Route::post('/login', [UserCtr::class, 'login'])->middleware('guest');
 
-Route::get('/produk', [ProdukCtr::class, 'index'])->name('DashboardAdmin');
 Route::post('/produk', [ProdukCtr::class, 'store'])->name('produk.store');
 
 Route::get('/DashboardAdmin', [ProdukCtr::class, 'index'])->name('DashboardAdmin');
-
 
 Route::get('/EditProduk/{id}', [ProdukCtr::class, 'edit'])->name('edit.produk');
 Route::put('/produk/{id}', [ProdukCtr::class, 'update'])->name('produk.update');
@@ -43,5 +41,7 @@ Route::post('/admin/logout', function (Request $request) {
     $request->session()->regenerateToken();
     return redirect('/');
 })->name('admin.logout');
+
+use Illuminate\Support\Facades\Artisan;
 
 

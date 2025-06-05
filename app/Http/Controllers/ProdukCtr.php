@@ -41,7 +41,7 @@ class ProdukCtr extends Controller
     public function edit($id)
     {
         $produk = Produk::findOrFail($id);
-        return view('editProduk', compact('produk'));
+        return view('EditProduk', compact('produk'));
     }
 
     public function update(Request $request, $id)
@@ -53,7 +53,7 @@ class ProdukCtr extends Controller
         $produk->kategori = $request->kategori;
         $produk->link = $request->link;
         if ($request->hasFile('foto')) {
-            $produk->foto = $request->file('foto')->store('foto', 'public');
+            $path = $request->file('foto')->store('foto', 'public');
         }
         $produk->save();
 
